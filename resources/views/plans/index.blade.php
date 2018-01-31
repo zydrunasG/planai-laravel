@@ -2,13 +2,14 @@
 
 @section('content')
 
-    <main role="main" class="container">
+    <main role="main" class="container-fluid">
 
+        <h1 class="page-header text-center">Visi planai</h1>
         <table class="table table-hover">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Tiekėjas</th>
+                <th scope="col">Operatorius</th>
                 <th scope="col">Planas</th>
                 <th scope="col">Kaina</th>
                 <th scope="col">Nemokami sms</th>
@@ -21,24 +22,29 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
+
 
 
             @if(count($plans))
-               @foreach(json_decode($plans, true) as $plan =>$p)
-
+               @foreach($plans as $plan)
+                   @if(count($plan['plans']))
+                       @for($i = 0; $i < count($plan['plans']); $i++)
                 <tr>
-                    <th>{{ $p->id }}</th>
-                    <th>{{ $p->name }}</th>
 
+                    <th>{{ $plan['plans'][$i]->id}}</th>
+                    <th>{{ $plan->name }}</th>
+                    <th>{{ $plan['plans'][$i]->plan_name }}</th>
+                    <th>{{ $plan['plans'][$i]->price }} eur</th>
+                    <th>{{ $plan['plans'][$i]['specs']->free_sms }} vnt</th>
+                    <th>{{ $plan['plans'][$i]['specs']->free_calls }} mins</th>
+                    <th>{{ $plan['plans'][$i]['specs']->free_gb }} GB</th>
+                    <th>{{ $plan['plans'][$i]['fees']->price_sms }} vnt</th>
+                    <th>{{ $plan['plans'][$i]['fees']->price_calls }} mins</th>
+                    <th>{{ $plan['plans'][$i]['fees']->price_gb }} GB</th>
 
                 </tr>
-
+                       @endfor
+                    @endif
                 @endforeach
             @else
                 <tr>

@@ -15,6 +15,7 @@
 
 <body>
 
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
     <a class="navbar-brand" href="#">Intelektika</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,12 +24,11 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ url('/') }}">Namai</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Ieškoti plano</a>
-            </li>
+            <li class="nav-item active"><a class="nav-link" href="{{ url('/') }}">Namai</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('search') }}">Ieškoti plano</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('create') }}">Įvesti naują planą</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url('company/create') }}">Įvesti naują operatorių</a></li>
+
 
 
         </ul>

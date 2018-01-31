@@ -16,9 +16,9 @@ class CreatePlansFeesTable extends Migration
         Schema::create('plans_fees', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('plan_id');
-            $table->integer('price_sms');
-            $table->integer('price_calls');
-            $table->integer('price_gb');
+            $table->double('price_sms');
+            $table->double('price_calls');
+            $table->double('price_gb');
 
         });
     }

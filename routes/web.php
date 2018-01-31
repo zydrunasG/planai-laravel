@@ -14,8 +14,17 @@
 
 
 Route::get('/', 'PlanController@index')->name('home');
+Route::get('/create', 'PlanController@create');
+Route::post('/create', 'PlanController@store');
+
+Route::get('/company/create', 'CompanyController@create');
+Route::post('/company/create', 'CompanyController@store');
+
+Route::get('/search', 'SearchController@index');
 
 Route::get('planai', function (){
     $companies = App\Company::with('plans', 'plans.specs', 'plans.fees')->get();
   return $companies;
 });
+
+
