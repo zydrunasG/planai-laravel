@@ -5,7 +5,8 @@
     <div class="container">
         <div class="col-md-6 offset-md-3">
 
-            <h1 class="page-header text-center">Naujas tinklo operatorius</h1>
+            <h1 class="page-header text-center">Naujas tinklo operatorius
+            </h1>
 
             @include('errors')
 

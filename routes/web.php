@@ -20,11 +20,12 @@ Route::post('/create', 'PlanController@store');
 Route::get('/company/create', 'CompanyController@create');
 Route::post('/company/create', 'CompanyController@store');
 
-Route::get('/search', 'SearchController@index');
 
-Route::get('planai', function (){
-    $companies = App\Company::with('plans', 'plans.specs', 'plans.fees')->get();
-  return $companies;
+Route::get('/search', 'SearchController@create');
+Route::post('/search', 'SearchController@index');
+
+Route::get('/planai', function (){
+    $plans =  \App\Company::with('plans', 'plans.specs', 'plans.fees')->get();
+    return $plans;
 });
-
 

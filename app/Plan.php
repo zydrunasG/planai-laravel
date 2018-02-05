@@ -17,4 +17,9 @@ class Plan extends Model
         return $this->hasOne(Plans_fee::class);
     }
 
+    public function company()
+    {
+        return $this->hasOne(Company::class);
+    }
+
 }

@@ -14,4 +14,7 @@ class Company extends Model
         return $this->hasMany(Plan::class);
     }
 
+
+
+
 }

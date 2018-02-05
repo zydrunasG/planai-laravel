@@ -18,6 +18,7 @@ class CreatePlansTable extends Migration
             $table->integer('company_id');
             $table->string('plan_name');
             $table->double('price');
+            $table->double('ration')->nullable();
 
 
 

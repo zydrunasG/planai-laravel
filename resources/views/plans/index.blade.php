@@ -38,9 +38,9 @@
                     <th>{{ $plan['plans'][$i]['specs']->free_sms }} vnt</th>
                     <th>{{ $plan['plans'][$i]['specs']->free_calls }} mins</th>
                     <th>{{ $plan['plans'][$i]['specs']->free_gb }} GB</th>
-                    <th>{{ $plan['plans'][$i]['fees']->price_sms }} vnt</th>
-                    <th>{{ $plan['plans'][$i]['fees']->price_calls }} mins</th>
-                    <th>{{ $plan['plans'][$i]['fees']->price_gb }} GB</th>
+                    <th>{{ $plan['plans'][$i]['fees']->price_sms }} vnt/eur</th>
+                    <th>{{ $plan['plans'][$i]['fees']->price_calls }} min/eur</th>
+                    <th>{{ $plan['plans'][$i]['fees']->price_gb }} gb/eur</th>
 
                 </tr>
                        @endfor
