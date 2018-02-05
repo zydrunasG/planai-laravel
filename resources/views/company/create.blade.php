@@ -26,4 +26,13 @@
         </div>
     </div>
 
+
+@endsection
+
+
+@section('footer')
+    <script>
+        document.getElementById("li-company").classList.add("active");
+    </script>
+
 @endsection

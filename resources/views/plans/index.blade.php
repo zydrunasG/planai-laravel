@@ -48,7 +48,9 @@
                 @endforeach
             @else
                 <tr>
-                    <th scope="row">ner</th>
+                    <th scope="row"></th>
+                    <th scope="row">Duomenų nėra</th>
+                    <th scope="row"></th>
 
                 </tr>
             @endif
@@ -57,5 +59,12 @@
         </table>
 
     </main>
+
+@endsection
+
+@section('footer')
+    <script>
+        document.getElementById("li-home").classList.add("active");
+    </script>
 
 @endsection

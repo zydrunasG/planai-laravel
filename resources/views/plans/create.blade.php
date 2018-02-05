@@ -88,4 +88,12 @@
             </div>
         </div>
     </div>
+
+@endsection
+
+@section('footer')
+    <script>
+        document.getElementById("li-plan").classList.add("active");
+    </script>
+
 @endsection

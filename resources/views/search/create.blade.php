@@ -41,5 +41,12 @@
         </div>
     </div>
 
+@endsection
+
+@section('footer')
+    <script>
+        document.getElementById("li-search").classList.add("active");
+    </script>
 
 @endsection
+
