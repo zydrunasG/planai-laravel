@@ -31,7 +31,7 @@
                        @for($i = 0; $i < count($plan['plans']); $i++)
                 <tr>
 
-                    <th>{{ $plan['plans'][$i]->id}}</th>
+                    <th></th>
                     <th>{{ $plan->name }}</th>
                     <th>{{ $plan['plans'][$i]->plan_name }}</th>
                     <th>{{ $plan['plans'][$i]->price }} eur</th>
