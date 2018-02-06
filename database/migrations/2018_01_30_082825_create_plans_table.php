@@ -19,12 +19,9 @@ class CreatePlansTable extends Migration
             $table->string('plan_name');
             $table->double('price');
             $table->double('ration')->nullable();
-
-
-
-
-
             $table->timestamps();
+
+
         });
     }
 

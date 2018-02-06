@@ -15,23 +15,23 @@
 
                 <div class="form-group">
                     <label for="sms">SMS</label>
-                    <input type="number" class="form-control" id="sms" name="sms">
+                    <input type="number" min="0" class="form-control" id="sms" name="sms" required>
                 </div>
 
                 <div class="form-group">
                     <label for="calls">Skambučiai</label>
-                    <input type="number" class="form-control" id="calls" name="calls">
+                    <input type="number" min="0" class="form-control" id="calls" name="calls" required>
                 </div>
 
                 <div class="form-group">
                     <label for="gb">Internetas, GB</label>
-                    <input type="number" class="form-control" id="gb" name="gb">
+                    <input type="number" min="0" class="form-control" id="gb" name="gb" required>
                 </div>
 
 
                 <div class="form-group">
                     <label for="max_price">Max. kaina</label>
-                    <input type="number" class="form-control" id="max_price" name="max_price">
+                    <input type="number" min="0" step="0.01" class="form-control" id="max_price" name="max_price" required>
                 </div>
 
                 <div class="form-group">

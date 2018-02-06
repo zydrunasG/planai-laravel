@@ -20,7 +20,7 @@
                     <label for="company">Tiekėjas: </label>
 
                     <div class="input-group">
-                        <select class="form-control" id="company" name="company">
+                        <select class="form-control" id="company" name="company" required>
                             @foreach($companies as $company)
                             <option value="{{ $company->id }}">{{ $company->name }}</option>
                             @endforeach

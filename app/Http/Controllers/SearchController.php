@@ -10,13 +10,20 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
+        $this->validate($request, [
+            'sms' => 'required|numeric|min:0',
+            'calls' => 'required|numeric|min:0',
+            'gb' => 'required|numeric|min:0',
+            'max_price' => 'required|numeric|min:0',
+
+        ]);
 
         $plans = Company::with('plans', 'plans.specs', 'plans.fees')->get();
 
         $sms = $request->sms;
         $calls = $request->calls;
         $gb = $request->gb;
-        $max_price = $request->from_price;
+        $max_price = $request->max_price;
         $first = 0;
 
         if(count($plans)) {
@@ -36,11 +43,10 @@ class SearchController extends Controller
                         $left_sms = ($sms - $free_sms) * ($sms - $free_sms);
                         $left_calls = ($calls - $free_calls) * ($calls - $free_calls);
                         $left_gb = ($gb - $free_gb) * ($gb - $free_gb);
+                        $left_price = ($max_price - $price) * ($max_price - $price);
 
 
-
-                        $left_ratio = sqrt( $left_sms + $left_calls + $left_gb);
-
+                        $left_ratio = sqrt( $left_sms + $left_calls + $left_gb + $left_price);
 
 
 
@@ -74,7 +80,7 @@ class SearchController extends Controller
         })->get();
 
 
-        return view('plans.show', compact( 'plans', 'bestPlan'));
+        return view('plans.show', compact( 'plans', 'bestPlan', 'max_price'));
 
     }
 

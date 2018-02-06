@@ -26,7 +26,7 @@ class CompanyController extends Controller
         $company->name = $request->name;
         $company->save();
 
-        return redirect('/create');
+        return redirect()->home();
     }
 
 
